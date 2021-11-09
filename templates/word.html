@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Dictionary</title>
+    <style>
+        body {
+    background-color: aquamarine;
+}
+.search {
+    padding: 70px 0;
+    text-align: center;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.word_in {
+    padding: 10px;
+}
+button {
+    padding: 10px;
+}
+.meaning, .syn, .ant{
+    font-family: sans-serif;
+}
+.word {
+    border: 1px solid black;
+    box-shadow: 10;
+}
+    </style>
+</head>
+<body>
+    <div class="search">
+        <h1>Search the Dictionary</h1>
+    
+        <form action="word">
+            <input type="text" class="word_in" name = "search" placeholder="Input your word here"></input>
+            <button type="submit">Search</button>
+
+        </form>
+        <h1>Search Results:</h1>
+        <h2 class="meaning">Meaning: </h2>
+        {% for object,key in meaning.items %}
+        
+        <h3>{{object}} : {{key}}</h3>
+        {% endfor %}
+        <h2 class="syn">Synonyms: </h2>
+        <div class="word">{{synonyms}}</div>
+        
+        <h2 class="ant">Antonyms: </h2>
+        <div class="word">{{antonyms}}</div>
+  
+    </div>
+</body>
+</html>
